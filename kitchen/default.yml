@@ -1,0 +1,5 @@
+---
+- name: kitchen_test_role
+  hosts: windows-servers
+  roles:
+    - kitchen_test_role
