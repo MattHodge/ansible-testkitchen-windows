@@ -1,0 +1,46 @@
+---
+driver:
+  name: vagrant
+
+platforms:
+  - name: ansibleserver
+    driver_plugin: vagrant
+    driver_config:
+      box: ubuntu/xenial64
+      network:
+      - [ 'private_network', { ip: '172.28.128.10' } ]
+    provisioner:
+      name: ansible_playbook
+      roles_path: roles
+      ansible_connection: winrm
+      ansible_inventory: inventory/hosts
+      require_windows_support: true
+      require_chef_for_busser: false
+      ansible_host_key_checking: false
+      ansible_verbose: true
+      ansible_verbosity: 4
+    verifier:
+      name: shell
+      command: echo 'Skipping Verify'
+
+  - name: win2012r2
+    driver_config:
+      box: MattHodge/Windows2012R2Core-WMF5-NOCM
+      communicator: winrm
+      network:
+      - [ 'private_network', { ip: '172.28.128.11' } ]
+       # needed to force provision of the vagrantfile
+      provision: true
+      # needed to run the ConfigureRemotingForAnsible.ps1
+      vagrantfiles:
+        - vagrant_windows_target.rb
+    transport:
+      name: winrm
+    verifier:
+      name: pester
+      test_folder: Tests
+    provisioner:
+      name: shell
+
+suites:
+  - name: default
