@@ -5,7 +5,7 @@ This repository is an example of how you can test Ansible roles meant for Window
 The process will build an Ansible server as part of a test-kitchen run, apply configuration to a Windows node and then tests via Pester.
 
 You can read a detailed blog post about this:
-* [https://hodgkins.io/testing-ansible-roles-windows-test-kitchen](https://hodgkins.io/testing-ansible-roles-windows-test-kitchen)
+> [https://hodgkins.io/testing-ansible-roles-windows-test-kitchen](https://hodgkins.io/testing-ansible-roles-windows-test-kitchen)
 
 <!-- TOC depthFrom:2 -->
 
