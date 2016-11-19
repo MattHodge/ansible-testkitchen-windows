@@ -59,6 +59,10 @@ kitchen verify
 kitchen destroy
 ```
 
+# Linting
+
+I am using Scrutinizer CI to lint the role. See `.scrutinizer.yml`.
+
 ## Resources
 * [https://github.com/neillturner/kitchen-ansible/](https://github.com/neillturner/kitchen-ansible/)
 * [https://github.com/neillturner/kitchen-ansible/blob/master/provisioner_options.md](https://github.com/neillturner/kitchen-ansible/blob/master/provisioner_options.md)
