@@ -1,10 +1,10 @@
 ---
-  - name: install web-server feature
-    win_feature:
-      name: Web-Server
-      state: present
+- name: install web-server feature
+  win_feature:
+    name: Web-Server
+    state: present
 
-  - name: deploy iis start page template
-    template:
-      src: iisstart.j2
-      dest: C:\inetpub\wwwroot\iisstart.htm
+- name: deploy iis start page template
+  template:
+    src: iisstart.j2
+    dest: C:\inetpub\wwwroot\iisstart.htm
